@@ -13,7 +13,7 @@ const Books = () => {
         
     }, [])
    
-    console.log(books);
+   
     
 
    
