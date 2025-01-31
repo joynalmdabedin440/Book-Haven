@@ -1,7 +1,7 @@
 
 
 const ListedBooksCard = ({ book }) => {
-    console.log(book);
+    
 
     const { bookName, author, tags, publisher, totalPages
         , category, rating, image, yearOfPublishing } = book

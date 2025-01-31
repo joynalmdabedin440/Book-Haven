@@ -31,6 +31,14 @@ const router = createBrowserRouter([
         element: <ListedBooks></ListedBooks>,
         loader: ()=>fetch("booksData.json")
         
+      },
+      {
+        path: '/signIn',
+        element:<p>This page is under construction</p>
+      },
+      {
+        path: "/pageToRead",
+        element: <p>This page is under construction</p>
       }
 
     ]
