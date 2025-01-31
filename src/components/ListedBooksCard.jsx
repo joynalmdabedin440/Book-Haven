@@ -11,7 +11,7 @@ const ListedBooksCard = ({ book }) => {
             <figure className="w-1/3 bg-base-300 p-4 m-4">
                 <img className=" w-32 h-40"
                     src={image}
-                    alt="Movie" />
+                    alt={bookName} />
             </figure>
             <div className="card-body ">
                 <h2 className="card-title">{bookName}</h2>
@@ -20,7 +20,7 @@ const ListedBooksCard = ({ book }) => {
                     <p className="font-bold">Tags:</p>
                     <div>
                         {
-                            tags.map((tag, index) => <button id={index} className="btn rounded-full bg-base-200 border-0 text-[#23BE0A] mr-3">#{tag}</button>)
+                            tags.map((tag, index) => <button key={index} className="btn rounded-full bg-base-200 border-0 text-[#23BE0A] mr-3">#{tag}</button>)
                         }
                     </div>
                     <p>
