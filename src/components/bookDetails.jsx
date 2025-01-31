@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { addBookToReadList } from "../utility/LocalDB";
+import { addBookToReadList, addBookToWishList } from "../utility/LocalDB";
 
 
 const BookDetails = () => {
@@ -16,6 +16,10 @@ const BookDetails = () => {
 
     const handleAddReadToReadList = (id) => {
         addBookToReadList(id)
+    }
+
+    const handleAddToWishList = (id) => {
+        addBookToWishList(id)
     }
     
 
@@ -58,7 +62,9 @@ const BookDetails = () => {
                     <button onClick={() => {
                         handleAddReadToReadList(bookId)
                     }} className="btn mr-3">Read</button>
-                    <button className="btn bg-[#50B1C9] hover:bg-cyan-300">Wishlist</button>
+                    <button onClick={() => {
+                        handleAddToWishList(bookId)
+                    }} className="btn bg-[#50B1C9] hover:bg-cyan-300">Wishlist</button>
                 </div>
 
 

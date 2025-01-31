@@ -8,6 +8,16 @@ const getReadList = () => {
     }
 }
 
+const getWishList = () => {
+    const wishListStr = localStorage.getItem("wish-list")
+    if (wishListStr) {
+        return JSON.parse(wishListStr)
+    }
+    else {
+        return []
+     }
+}
+
 const addBookToReadList = (id) => {
     const readList = getReadList()
     
@@ -22,4 +32,17 @@ const addBookToReadList = (id) => {
     }
 }
 
-export { addBookToReadList, getReadList }
+const addBookToWishList = (id) => { 
+    const wishList = getWishList()
+    
+    
+    if (wishList.includes(id)) {
+        alert(id, "This book is already in the wish list!")
+    }
+    else {
+        wishList.push(id)
+        localStorage.setItem("wish-list", JSON.stringify(wishList))
+    }
+}
+
+export { addBookToReadList, getReadList,addBookToWishList,getWishList }
