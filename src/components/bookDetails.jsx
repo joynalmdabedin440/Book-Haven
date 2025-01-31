@@ -1,14 +1,24 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { addBookToReadList } from "../utility/LocalDB";
 
 
 const BookDetails = () => {
 
     const { bookId } = useParams()
     const books = useLoaderData()
+
+    
     const book = books.find(book => book.bookId === parseInt(bookId))
 
 
-    const { bookName, image, author, category, tags, totalPages, publisher, rating, review ,yearOfPublishing} = book
+    const { bookName, image, author, category, tags, totalPages, publisher, rating, review, yearOfPublishing } = book
+
+
+    const handleAddReadToReadList = (id) => {
+        addBookToReadList(id)
+    }
+    
+
 
 
     return (
@@ -45,7 +55,9 @@ const BookDetails = () => {
                 </div>
 
                 <div>
-                    <button className="btn mr-3">Read</button>
+                    <button onClick={() => {
+                        handleAddReadToReadList(bookId)
+                    }} className="btn mr-3">Read</button>
                     <button className="btn bg-[#50B1C9] hover:bg-cyan-300">Wishlist</button>
                 </div>
 
